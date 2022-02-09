@@ -176,7 +176,6 @@ class ProductSupplierTable extends AbstractTable
      */
     protected function prepareQuery(): SpyProductQuery
     {
-        /** @var \Orm\Zed\Product\Persistence\SpyProductQuery $query */
         $query = $this->productQuery
             ->rightJoinSpyCompanySupplierToProduct()
             ->useSpyCompanySupplierToProductQuery()
