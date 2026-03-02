@@ -21,11 +21,6 @@ class ProductSupplierController extends AbstractController
      */
     protected const PARAM_ID_COMPANY = 'id-company';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     public function indexAction(Request $request): array
     {
         $idCompany = $this->castId($request->get(static::PARAM_ID_COMPANY));
@@ -37,11 +32,6 @@ class ProductSupplierController extends AbstractController
         ];
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\JsonResponse
-     */
     public function tableAction(Request $request): JsonResponse
     {
         $idCompany = $this->castId($request->get(static::PARAM_ID_COMPANY));

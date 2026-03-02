@@ -22,33 +22,21 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
 
 class CompanySupplierGuiCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToCompanySupplierFacadeInterface
-     */
     public function getCompanySupplierFacade(): CompanySupplierGuiToCompanySupplierFacadeInterface
     {
         return $this->getProvidedDependency(CompanySupplierGuiDependencyProvider::FACADE_COMPANY_SUPPLIER);
     }
 
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductQuery
-     */
     public function getProductQuery(): SpyProductQuery
     {
         return $this->getProvidedDependency(CompanySupplierGuiDependencyProvider::PROPEL_QUERY_PRODUCT);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Communication\Form\CompanySupplierForm
-     */
     public function createCompanySupplierForm(): CompanySupplierForm
     {
         return new CompanySupplierForm();
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Communication\Form\DataProvider\CompanySupplierFormDataProvider
-     */
     public function createCompanySupplierFormDataProvider(): CompanySupplierFormDataProvider
     {
         return new CompanySupplierFormDataProvider(
@@ -56,11 +44,6 @@ class CompanySupplierGuiCommunicationFactory extends AbstractCommunicationFactor
         );
     }
 
-    /**
-     * @param int $idCompany
-     *
-     * @return \Spryker\Zed\CompanySupplierGui\Communication\Table\ProductSupplierTable
-     */
     public function createProductSuppliersTable(int $idCompany): ProductSupplierTable
     {
         return new ProductSupplierTable(
@@ -72,33 +55,21 @@ class CompanySupplierGuiCommunicationFactory extends AbstractCommunicationFactor
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToMoneyFacadeInterface
-     */
     protected function getMoneyFacade(): CompanySupplierGuiToMoneyFacadeInterface
     {
         return $this->getProvidedDependency(CompanySupplierGuiDependencyProvider::FACADE_MONEY);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToStoreFacadeInterface
-     */
     protected function getStoreFacade(): CompanySupplierGuiToStoreFacadeInterface
     {
         return $this->getProvidedDependency(CompanySupplierGuiDependencyProvider::FACADE_STORE);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToCurrencyFacadeInterface
-     */
     protected function getCurrencyFacade(): CompanySupplierGuiToCurrencyFacadeInterface
     {
         return $this->getProvidedDependency(CompanySupplierGuiDependencyProvider::FACADE_CURRENCY);
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Communication\Form\DataProvider\CompanyTypeChoiceFormDataProvider
-     */
     public function createCompanyTypeChoiceFormDataProvider(): CompanyTypeChoiceFormDataProvider
     {
         return new CompanyTypeChoiceFormDataProvider(
@@ -106,9 +77,6 @@ class CompanySupplierGuiCommunicationFactory extends AbstractCommunicationFactor
         );
     }
 
-    /**
-     * @return \Spryker\Zed\CompanySupplierGui\Communication\Form\CompanyTypeChoiceFormType
-     */
     public function createCompanyTypeChoiceFormType(): CompanyTypeChoiceFormType
     {
         return new CompanyTypeChoiceFormType();

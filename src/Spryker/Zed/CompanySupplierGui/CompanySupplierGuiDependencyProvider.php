@@ -42,11 +42,6 @@ class CompanySupplierGuiDependencyProvider extends AbstractBundleDependencyProvi
      */
     public const PROPEL_QUERY_PRODUCT = 'PROPEL_QUERY_PRODUCT';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideCommunicationLayerDependencies(Container $container): Container
     {
         $container = $this->addCompanySupplierFacade($container);
@@ -58,11 +53,6 @@ class CompanySupplierGuiDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCompanySupplierFacade(Container $container): Container
     {
         $container->set(static::FACADE_COMPANY_SUPPLIER, function (Container $container) {
@@ -72,11 +62,6 @@ class CompanySupplierGuiDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMoneyFacade(Container $container): Container
     {
         $container->set(static::FACADE_MONEY, function (Container $container) {
@@ -86,11 +71,6 @@ class CompanySupplierGuiDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addStoreFacade(Container $container): Container
     {
         $container->set(static::FACADE_STORE, function (Container $container) {
@@ -100,11 +80,6 @@ class CompanySupplierGuiDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addCurrencyFacade(Container $container): Container
     {
         $container->set(static::FACADE_CURRENCY, function (Container $container) {

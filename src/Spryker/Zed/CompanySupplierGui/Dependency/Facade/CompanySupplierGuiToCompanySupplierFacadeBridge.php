@@ -27,47 +27,26 @@ class CompanySupplierGuiToCompanySupplierFacadeBridge implements CompanySupplier
         $this->companySupplierFacade = $companySupplierFacade;
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanySupplierCollectionTransfer
-     */
     public function getAllSuppliers(): CompanySupplierCollectionTransfer
     {
         return $this->companySupplierFacade->getAllSuppliers();
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return \Generated\Shared\Transfer\CompanySupplierCollectionTransfer
-     */
     public function getSuppliersByIdProduct(int $idProduct): CompanySupplierCollectionTransfer
     {
         return $this->companySupplierFacade->getSuppliersByIdProduct($idProduct);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     *
-     * @return void
-     */
     public function saveCompanySupplierRelationsForProductConcrete(ProductConcreteTransfer $productConcreteTransfer): void
     {
         $this->companySupplierFacade->saveCompanySupplierRelationsForProductConcrete($productConcreteTransfer);
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyTypeCollectionTransfer
-     */
     public function getCompanyTypes(): CompanyTypeCollectionTransfer
     {
         return $this->companySupplierFacade->getCompanyTypes();
     }
 
-    /**
-     * @param int $idCompanyType
-     *
-     * @return \Generated\Shared\Transfer\SpyCompanyTypeEntityTransfer
-     */
     public function getCompanyTypeByIdCompanyType(int $idCompanyType): SpyCompanyTypeEntityTransfer
     {
         return $this->companySupplierFacade->getCompanyTypeByIdCompanyType($idCompanyType);

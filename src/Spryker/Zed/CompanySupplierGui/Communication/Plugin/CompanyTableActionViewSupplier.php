@@ -62,11 +62,6 @@ class CompanyTableActionViewSupplier extends AbstractPlugin implements CompanyTa
         return $button;
     }
 
-    /**
-     * @param array $company
-     *
-     * @return string
-     */
     protected function getCompanyType(array $company): string
     {
         if (!$company[static::FK_COMPANY_TYPE]) {

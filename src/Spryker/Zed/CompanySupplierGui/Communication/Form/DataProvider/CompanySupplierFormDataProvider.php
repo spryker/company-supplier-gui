@@ -17,9 +17,6 @@ class CompanySupplierFormDataProvider
      */
     protected $companySupplierFacade;
 
-    /**
-     * @param \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToCompanySupplierFacadeInterface $companySupplierFacade
-     */
     public function __construct(CompanySupplierGuiToCompanySupplierFacadeInterface $companySupplierFacade)
     {
         $this->companySupplierFacade = $companySupplierFacade;
@@ -35,9 +32,6 @@ class CompanySupplierFormDataProvider
         ];
     }
 
-    /**
-     * @return array
-     */
     protected function getSuppliersForSelect(): array
     {
         $result = [];

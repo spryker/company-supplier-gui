@@ -71,11 +71,6 @@ class CompanyTableCompanyTypePlugin extends AbstractPlugin implements CompanyTab
         return [static::COL_COMPANY_TYPE => $this->getCompanyType($item)];
     }
 
-    /**
-     * @param array $item
-     *
-     * @return string
-     */
     protected function getCompanyType(array $item): string
     {
         if (!$item[static::FK_COMPANY_TYPE]) {

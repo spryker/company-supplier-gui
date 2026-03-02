@@ -14,34 +14,13 @@ use Generated\Shared\Transfer\SpyCompanyTypeEntityTransfer;
 
 interface CompanySupplierGuiToCompanySupplierFacadeInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\CompanyTypeCollectionTransfer
-     */
     public function getCompanyTypes(): CompanyTypeCollectionTransfer;
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanySupplierCollectionTransfer
-     */
     public function getAllSuppliers(): CompanySupplierCollectionTransfer;
 
-    /**
-     * @param int $idProduct
-     *
-     * @return \Generated\Shared\Transfer\CompanySupplierCollectionTransfer
-     */
     public function getSuppliersByIdProduct(int $idProduct): CompanySupplierCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productConcreteTransfer
-     *
-     * @return void
-     */
     public function saveCompanySupplierRelationsForProductConcrete(ProductConcreteTransfer $productConcreteTransfer): void;
 
-    /**
-     * @param int $idCompanyType
-     *
-     * @return \Generated\Shared\Transfer\SpyCompanyTypeEntityTransfer
-     */
     public function getCompanyTypeByIdCompanyType(int $idCompanyType): SpyCompanyTypeEntityTransfer;
 }

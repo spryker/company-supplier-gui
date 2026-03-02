@@ -97,13 +97,6 @@ class ProductSupplierTable extends AbstractTable
      */
     protected $currencyFacade;
 
-    /**
-     * @param int $idCompany
-     * @param \Orm\Zed\Product\Persistence\SpyProductQuery $productQuery
-     * @param \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToMoneyFacadeInterface $moneyFacade
-     * @param \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToStoreFacadeInterface $storeFacade
-     * @param \Spryker\Zed\CompanySupplierGui\Dependency\Facade\CompanySupplierGuiToCurrencyFacadeInterface $currencyFacade
-     */
     public function __construct(
         int $idCompany,
         SpyProductQuery $productQuery,
@@ -125,11 +118,6 @@ class ProductSupplierTable extends AbstractTable
         );
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return \Spryker\Zed\Gui\Communication\Table\TableConfiguration
-     */
     protected function configure(TableConfiguration $config): TableConfiguration
     {
         $config->setHeader([
@@ -150,11 +138,6 @@ class ProductSupplierTable extends AbstractTable
         return $config;
     }
 
-    /**
-     * @param \Spryker\Zed\Gui\Communication\Table\TableConfiguration $config
-     *
-     * @return array
-     */
     protected function prepareData(TableConfiguration $config): array
     {
         /** @var \Propel\Runtime\Collection\ObjectCollection<\Orm\Zed\Product\Persistence\SpyProduct> $productSupplierCollection */
@@ -171,9 +154,6 @@ class ProductSupplierTable extends AbstractTable
         return $this->format($productSupplierCollection);
     }
 
-    /**
-     * @return \Orm\Zed\Product\Persistence\SpyProductQuery
-     */
     protected function prepareQuery(): SpyProductQuery
     {
         /** @var \Orm\Zed\Product\Persistence\SpyProductQuery $query */
@@ -204,23 +184,12 @@ class ProductSupplierTable extends AbstractTable
         return $productSuppliers;
     }
 
-    /**
-     * @param \Orm\Zed\Product\Persistence\SpyProduct $spyProductEntity
-     * @param \Generated\Shared\Transfer\ProductConcreteTransfer $productTransfer
-     *
-     * @return void
-     */
     protected function setProductSupplierPrices(SpyProduct $spyProductEntity, ProductConcreteTransfer &$productTransfer): void
     {
         $productTransfer->setSupplierPrice($this->getSupplierPrice($spyProductEntity));
         $productTransfer->setDefaultPrice($this->getDefaultPrice($spyProductEntity));
     }
 
-    /**
-     * @param \Orm\Zed\Product\Persistence\SpyProduct $spyProductEntity
-     *
-     * @return string
-     */
     protected function getSupplierPrice(SpyProduct $spyProductEntity): string
     {
         $criteria = new Criteria();
@@ -235,11 +204,6 @@ class ProductSupplierTable extends AbstractTable
         return $this->formatPrices($prices[0]->getPriceProductStoresJoinCurrency());
     }
 
-    /**
-     * @param \Orm\Zed\Product\Persistence\SpyProduct $spyProductEntity
-     *
-     * @return string
-     */
     protected function getDefaultPrice(SpyProduct $spyProductEntity): string
     {
         $criteria = new Criteria();

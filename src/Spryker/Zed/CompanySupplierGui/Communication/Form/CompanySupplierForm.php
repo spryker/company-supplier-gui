@@ -42,11 +42,6 @@ class CompanySupplierForm extends AbstractType
         $this->addCompanySuppliersSelectField($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
@@ -75,11 +70,6 @@ class CompanySupplierForm extends AbstractType
         $this->addModelTransformer($builder);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormBuilderInterface $builder
-     *
-     * @return void
-     */
     protected function addModelTransformer(FormBuilderInterface $builder): void
     {
         $builder->get(ProductConcreteTransfer::COMPANY_SUPPLIERS)->addModelTransformer(
